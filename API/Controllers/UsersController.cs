@@ -26,7 +26,7 @@ public class UsersController : ControllerBase
     //converting it into asynchronous code [multithreading]
     public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
     {
-        var users =await  _context.Users.ToListAsync();
+        var users =await _context.Users.ToListAsync();
         return users;
     }
 
