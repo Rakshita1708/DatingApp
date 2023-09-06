@@ -1,14 +1,16 @@
 ﻿using API.Data;
 using API.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers;
 
+[Authorize]
 //using annotation
 [ApiController]
 [Route("api/[controller]")]  //localhost:5001/api/users
-public class UsersController : ControllerBase
+public class UsersController : BaseApiController
 {
     private readonly DataContext _context;
 
@@ -19,11 +21,13 @@ public class UsersController : ControllerBase
     }
 
     //API Endpoint
-    //http method get 
+    //http method get
+
+    [AllowAnonymous] 
     [HttpGet]  //localhost:5001/api/users
 
     //returning a list of users in the table in json format 
-    //converting it into asynchronous code [multithreading]
+    //converting it into asynchronous code [multithreading] simulataneously different users can login
     public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
     {
         var users =await _context.Users.ToListAsync();

@@ -10,6 +10,6 @@ public class DataContext : DbContext
     {
         
     }
- 
+    //Users is table name column name inside appuser class
     public DbSet <AppUser> Users { get; set; }
 }
