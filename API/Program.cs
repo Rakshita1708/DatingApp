@@ -15,7 +15,7 @@ app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod()
     .WithOrigins("https://localhost:4200"));
 app.UseHttpsRedirection();
 
-//specifying the middleware here for jwt token
+//specifying the middleware here for jwt token authentication
 app.UseAuthentication();
 app.UseAuthorization();
 

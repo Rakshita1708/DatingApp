@@ -7,9 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace API.Controllers;
 
 [Authorize]
-//using annotation
-[ApiController]
-[Route("api/[controller]")]  //localhost:5001/api/users
+
 public class UsersController : BaseApiController
 {
     private readonly DataContext _context;
