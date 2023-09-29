@@ -28,9 +28,6 @@ export class NavComponent implements OnInit
     {
       next: _ =>
       this.router.navigateByUrl('/members'), //this redirects page after logging in to members page
-      
-      error: error => this.toastr.error(error.error)//if there is some problem while logging in this throws error msgx
-      
     })
   }
   logout()

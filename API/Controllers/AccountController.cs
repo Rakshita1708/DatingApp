@@ -92,6 +92,7 @@ namespace API.Controllers
         {
             //x refers to a user in the table and AnyAsynch will loop over every user in the table 
             return await _context.Users.AnyAsync(x =>   x.UserName == username.ToLower());
+
         }
     }
 }
